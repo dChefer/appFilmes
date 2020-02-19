@@ -1,0 +1,45 @@
+    @import url('https://fonts.googleapis.com/css?family=Lora&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=McLaren&display=swap');
+    page-list {
+        ion-content {
+            background-image: url('/assets/imgs/fundoDe.jpg');
+            margin: 0;
+            padding: 0;
+            background-size: cover;
+            font-family: 'Lora', serif;
+            text-align: center;
+        }
+        ion-item.usuario {
+            background: rgba(151, 150, 150, 0.034);
+            font-family: 'McLaren', serif;
+            color: #fff;
+            text-shadow: 0 0 8px #1d70f6;
+        }
+        h3 {
+            background-size: cover;
+            font-family: 'McLaren', serif;
+            text-align: left;
+        }
+        .photo {
+            margin-right: 05%;
+            border-radius: 60%;
+            width: 20%;
+        }
+        form {
+            margin-top: 40%;
+        }
+        ion-item {
+            border-radius: 35px;
+            opacity: 0.8;
+        }
+        ion-list {
+            opacity: 0.8;
+            color: black;
+            border-radius: 35px;
+        }
+        .button {
+            margin-top: 5%;
+            margin-bottom: 10%;
+            border-radius: 35px;
+        }
+    }

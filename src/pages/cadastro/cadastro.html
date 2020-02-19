@@ -1,0 +1,39 @@
+<ion-content padding>
+
+    <img src="../assets/imgs/pipoca2.png" alt="logo">
+    <form [formGroup]="form" (submit)="formRegistro()">
+        <ion-list>
+            <ion-item>
+                <ion-label class="senha" style="color: #fff">E-mail</ion-label>
+                <ion-input typ="text" formControlName="email"></ion-input>
+            </ion-item>
+            <small *ngIf="email.hasError('email')  && email.touched" ion-text color="turq">
+      *Formato de Email Inválido!
+    </small>
+            <ion-item>
+                <ion-label class="senha" style="color: #fff">Senha</ion-label>
+                <ion-input typ="password" formControlName="senha"></ion-input>
+            </ion-item>
+            <small *ngIf="senha.hasError('required') && senha.touched" ion-text color="turq">
+                *Campo Obrigatório
+            </small>
+            <small *ngIf="senha.hasError('minlength')" ion-text color="turq">
+                *Campo deve conter minimo 6 caracteres!
+            </small>
+            <ion-item>
+                <ion-label class="confSenha" style="color: #fff">Confirmar Senha</ion-label>
+                <ion-input typ="password" formControlName="confSenha"></ion-input>
+            </ion-item>
+            <small *ngIf="confSenha.hasError('required') && confSenha.touched" ion-text color="turq">
+                *Campo Obrigatório
+            </small>
+            <small *ngIf="confSenha.hasError('minlength')" ion-text color="turq">
+                *Campo deve conter minimo 6 caracteres!
+            </small>
+        </ion-list>
+        <button ion-button full color="gold" type="submit" (click)="registrar()">
+                <ion-icon name="checkbox"> Registrar</ion-icon>
+            </button>
+    </form>
+
+</ion-content>turq

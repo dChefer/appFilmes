@@ -1,0 +1,80 @@
+<ion-content padding>
+    <ion-fab bottom right>
+        <button ion-fab color="jeans" (click)="irParaCadastro()">
+        <ion-icon name="add"></ion-icon>
+    </button>
+    </ion-fab>
+    <ion-item class="usuario">
+        <h2>
+            <img *ngIf="usuario.photoURL != null" class="photo" [src]="usuario.photoURL"> Usuário:{{usuario.displayName}}
+        </h2>
+    </ion-item>
+
+    <ion-item type="item">
+        <ion-label>
+            Busca por Genero:
+        </ion-label>
+        <ion-select [(ngModel)]="genero">
+            <ion-option value="acao">Ação</ion-option>
+            <ion-option value="anime">Anime</ion-option>
+            <ion-option value="comedia">Comédia</ion-option>
+            <ion-option value="drama">Drama</ion-option>
+            <ion-option value="romance">Romance</ion-option>
+            <ion-option value="suspense">Suspense</ion-option>
+            <ion-option value="terror">Terror</ion-option>
+        </ion-select>
+    </ion-item>
+    <button ion-button full color="jeans" (click)="buscar()">Buscar</button>
+
+    <ion-list>
+        <h3>Lista de Filmes</h3>
+        <ion-item-sliding *ngFor="let filme of filmes |async; let i=index" text-wrap (click)="toggleGroup(i)" [ngClass]="{active: isGroupShown(i)}">
+            <ion-item>
+                <h3>
+                    Filme: {{filme.nome}}
+                    <ion-icon item-right [name]="isGroupShown(i) ? 'arrow-dropdown' : 'arrow-dropright'">
+                    </ion-icon>
+                </h3>
+                <div *ngIf="isGroupShown(i)">Gênero: {{filme.genero}}</div>
+                <div *ngIf="isGroupShown(i)">Duração: {{filme.duracao}} min</div>
+                <div *ngIf="isGroupShown(i)">Diretor: {{filme.diretor}}</div>
+                <div *ngIf="isGroupShown(i)">
+                    <ion-grid>
+                        <ion-row>
+                            <ion-col>
+                            </ion-col>
+                            <ion-col>
+                                <div>
+                                    <button ion-button icon-end color="jeans" (click)="assistir(filme)">
+                    Assistir 
+                    <ion-icon name="videocam"></ion-icon>
+                  </button>
+                                </div>
+                            </ion-col>
+                            <ion-col>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                </div>
+            </ion-item>
+            <ion-item-options side="right">
+                <button ion-button color="secondary" (click)="editarFilme(filme)">
+          <ion-icon name="create"></ion-icon>
+        </button>
+                <button ion-button color="danger" (click)="confirmarExcluir(filme.key)">
+          <ion-icon name="trash"></ion-icon>
+        </button>
+            </ion-item-options>
+        </ion-item-sliding>
+    </ion-list>
+    <h3>Itens encontrados:</h3>
+    <ion-list>
+        <ion-item *ngFor="let filmesBusca of filmesBusca |async">
+            <ion-label>{{filmesBusca.nome}}</ion-label>
+            <ion-label>{{filmesBusca.classificacao}} anos</ion-label>
+        </ion-item>
+    </ion-list>
+
+
+
+</ion-content>

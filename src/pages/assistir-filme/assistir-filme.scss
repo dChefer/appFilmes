@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+page-assistir-filme {
+    ion-content {
+        margin: 0;
+        padding: 0;
+        background-image: url('/assets/imgs/fundoBlack.jpg');
+        font-family: 'Ubuntu', sans-serif;
+    }
+    div.loading {
+        margin-top: 60%;
+    }
+    h3 {
+        position: relative;
+        width: 100%;
+        color: #222;
+        text-transform: uppercase;
+        border-bottom: 16px solid #222;
+        letter-spacing: 0.05em;
+        line-height: 1.2em;
+    }
+    h3:before {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        color: #03a9f4;
+        border-bottom: 16px solid #03a9f4;
+        animation: animate 6s linear infinite;
+    }
+    @keyframes animate {
+        50% {
+            width: 40%;
+        }
+        100% {
+            width: 100%;
+        }
+    }
+}

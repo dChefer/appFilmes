@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css?family=Lora&display=swap');
+@import url('https://fonts.googleapis.com/css?family=McLaren&display=swap');
+page-editar-filme {
+    ion-content {
+        margin: 0;
+        padding: 0;
+        background-size: cover;
+        font-family: 'Lora', serif;
+        text-align: center;
+        background-image: url('/assets/imgs/fundoDe.jpg');
+    }
+    img {
+        width: 30%;
+    }
+    form {
+        opacity: 0.8;
+        margin-top: 5%;
+        margin-left: 5%;
+        margin-right: 5%;
+        font-family: 'Lora', serif;
+        font-size: 20px;
+    }
+    form p {
+        font-family: 'McLaren', cursive;
+        font-size: bold;
+        color: #fff;
+        text-shadow: 0 0 8px #1d70f6;
+    }
+    ion-item.item {
+        box-shadow: 0 5px 15px rgba(5, 5, 5, 0.644);
+        transition: all 0.5s ease-in-out;
+        text-align: left;
+        border-radius: 20px;
+        height: 50px;
+        margin-bottom: 10px;
+    }
+    ion-label {
+        font-family: 'McLaren', cursive;
+        font-size: bold;
+        color: black;
+        text-align: left;
+    }
+    ion-input[type=text] {
+        text-align: left;
+    }
+    .button {
+        margin-top: 10%;
+        border-radius: 35px;
+    }
+    .button[type=submit] {
+        color: #045304;
+        background: #32CD32;
+    }
+    .button[type=cancel] {
+        color: #720909;
+        background: #fd3636;
+    }
+}

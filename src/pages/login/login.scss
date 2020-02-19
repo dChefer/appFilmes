@@ -1,0 +1,47 @@
+page-login {
+    ion-content {
+        background-image: url('/assets/imgs/loginMin.jpg');
+        background-size: cover;
+        text-align: center;
+    }
+    img {
+        margin-bottom: 20px;
+        width: 140px;
+    }
+    input[type=text],
+    input[type=password] {
+        border-radius: 2px;
+        text-decoration: none;
+        font-size: 14px;
+        margin: 5px;
+        width: 85%;
+        transition: all 0.5s ease-in-out;
+        height: 35px;
+        text-align: center;
+        margin: 0 auto;
+        color: #fff;
+    }
+    input::placeholder {
+        color: #fff;
+    }
+    h2 {
+        margin-left: 30pt;
+    }
+    .button {
+        margin-top: 20px;
+        border-radius: 20px;
+    }
+    ion-item.item {
+        background: rgba(255, 255, 255, .2);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+        transition: all 0.5s ease-in-out;
+        border-radius: 20px;
+        opacity: 0.5;
+    }
+    h2 {
+        color: #fff;
+    }
+    .small {
+        font-size: 4em bold;
+    }
+}

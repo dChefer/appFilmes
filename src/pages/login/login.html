@@ -1,0 +1,40 @@
+<ion-content padding>
+
+    <img src="../assets/imgs/pipoca2.png" alt="logo">
+    <form [formGroup]="formLogin" (submit)="submitLogin()">
+        <div class="slide-inter ion-padding ">
+            <ion-item>
+                <ion-label class="email" style="color: #fff">E-mail</ion-label>
+                <ion-input type="text" formControlName="email"></ion-input>
+            </ion-item>
+            <small *ngIf="email.hasError('email')  && email.touched" ion-text color="turq">
+                    *Formato de Email Inválido!
+                 </small>
+            <ion-item>
+                <ion-label class="senha" style="color: #fff">Senha</ion-label>
+                <ion-input type="password" formControlName="senha"></ion-input>
+            </ion-item>
+            <small *ngIf="senha.hasError('required') && senha.touched" ion-text color="turq">
+                    *Campo Obrigatório
+                </small>
+            <small *ngIf="senha.hasError('minlength')" ion-text color="danger">
+                        *Campo deve conter minimo 6caracteres!
+                    </small>
+        </div>
+        <button ion-button type="submit" color="gold" (click)="logar()">
+                <ion-icon name="log-in"> Entrar</ion-icon>
+            </button>
+
+        <button ion-button type="button" color="jeans" (click)="registrarUsuario()">
+            <ion-icon name="add-circle"> Cadastrar</ion-icon>
+        </button>
+    </form>
+    <br>
+    <br>
+    <br>
+    <h2>Logar com:</h2>
+    <button ion-button full color="danger" (click)="logarGoogle()">
+      <ion-icon name="logo-google" >oogle</ion-icon>
+    </button>
+
+</ion-content>
